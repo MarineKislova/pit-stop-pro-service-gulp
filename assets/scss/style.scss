@@ -1,0 +1,46 @@
+//утилиты
+@use "utils/_fonts.scss" as *;
+@use "utils/_reset.scss" as *;
+@use "utils/_mixins" as mh;
+@use "utils/_settings.scss" as setSt;
+@use "utils/_variable.scss" as varSt;
+
+// блоки
+@use "blocks/_header.scss";
+@use "blocks/_hero.scss";
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @include mh.adaptiv-value("padding-top", 16, 8, 0);
+  height: 10000px;
+}
+.content {
+  flex: 1 1 auto;
+}
+
+[class*="__container"] {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #fff;
+  @include mh.adaptiv-value("padding", 32, 16, 0);
+}
+
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  width: 227px;
+  color: #fff;
+  font-size: 14px;
+  padding: 16px;
+  border-radius: 32px;
+  backdrop-filter: blur(32px);
+  background-color: var(--color-secondary);
+}
+
+.is-open {
+  display: flex;
+}

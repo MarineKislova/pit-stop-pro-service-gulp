@@ -1,0 +1,38 @@
+@use "utils/_mixins" as mh;
+
+.hero {
+  // margin-top: -70px;
+  &__container {
+    background: url(../../img/hero-1920x1280.jpg) center no-repeat;
+    height: 670px;
+    border-radius: 32px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+  }
+
+  &__btn {
+  }
+
+  &__experience {
+  }
+
+  &__experience-title {
+  }
+
+  &__experience-text {
+  }
+}
+.btn-primary {
+}
+.open-modal {
+}

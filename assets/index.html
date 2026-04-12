@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/head.html', { "title": "Pit Stop Pro Service" })
+  <body>
+    <div class="wrapper">
+      <main class="content">
+        @@include('html/header.html', {})
+        <!--  -->
+        <div class="main">
+          <!-- hero -->
+          <div class="hero">
+            <div class="hero__container">
+              <h1 class="hero__title">Trusted car repair in Warsaw</h1>
+              <div class="hero__subtitle">Space-level solutions for everyday challenges</div>
+              <button class="hero__btn btn-primary open-modal">Book an appointment</button>
+              <div class="hero__experience">
+                <div class="hero__experience-title">10+ Years of Experience</div>
+                <div class="hero__experience-text">Over 10 years of helping drivers in Warsaw keep their cars in perfect condition. Professional diagnostics, quality repairs, and service you can rely on.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- anchor About -->
+           <div class="anchor" id="about">
+            <div class="anchor__container"></div>
+           </div>
+        </div>
+        <!--  -->
+        @@include('html/footer.html', {})
+      </main>
+    </div>
+
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
