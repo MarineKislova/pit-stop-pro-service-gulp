@@ -13,7 +13,7 @@ export const path = {
     images: `${buildFolder}/img/`,
     fonts: `${buildFolder}/fonts/`,
     html: `${buildFolder}/`,
-    ru: `${buildFolder}/ru/`,
+    cz: `${buildFolder}/cz/`,
     en: `${buildFolder}/en/`,
     files: `${buildFolder}/files/`,
     other: `${buildFolder}/`,
@@ -26,7 +26,7 @@ export const path = {
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,mp4}`,
     svg: `${srcFolder}/img/**/*.svg`,
     html: `${srcFolder}/*.html`, //.pug
-    ru: `${srcFolder}/ru/*.html`, //.pug
+    cz: `${srcFolder}/cz/*.html`, //.pug
     en: `${srcFolder}/en/*.html`, //.pug
     files: `${srcFolder}/files/**/*.*`,
     other: `${srcFolder}/*.{php,txt,xml}`,
@@ -39,7 +39,7 @@ export const path = {
     icons: `${srcFolder}/icons/**/*.svg`,
     images: `${srcFolder}img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
     html: `${srcFolder}/**/*.html`, //.pug
-    ru: `${srcFolder}/**/*.html`, //.pug
+    cz: `${srcFolder}/**/*.html`, //.pug
     en: `${srcFolder}/**/*.html`, //.pug
     files: `${srcFolder}/files/**/*.*`,
     other: `${srcFolder}/*.{php,txt,xml}`,

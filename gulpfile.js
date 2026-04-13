@@ -20,8 +20,8 @@ import { copy } from "./gulp/tasks/copy.js";
 import { reset } from "./gulp/tasks/reset.js";
 // импорт задач из html.js
 import { html } from "./gulp/tasks/html.js";
-// импорт задач из ru.js
-import { ru } from "./gulp/tasks/ru.js";
+// импорт задач из cz.js
+import { cz } from "./gulp/tasks/cz.js";
 // импорт задач из en.js
 import { en } from "./gulp/tasks/en.js";
 // импорт сервера browsersync для локального сервера
@@ -55,7 +55,7 @@ function watchAssets() {
   gulp.watch(path.watch.files, copy);
   gulp.watch(path.watch.html, html);
   // gulp.watch(path.watch.html, gulp.series(html, ftp)); // если хотим чтобы побубликовалось сразу после публикации в ftp и так нужно сделать с каждм watch
-  gulp.watch(path.watch.ru, ru);
+  gulp.watch(path.watch.cz, cz);
   gulp.watch(path.watch.en, en);
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.scss, copySwiperCss);
@@ -73,10 +73,10 @@ export { svgSpriteTask };
 const fontsTasks = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
 // основные задачи для сборки проекта с использованием fonts.js
-const mainTasks = gulp.series(fontsTasks, gulp.parallel(copy, html, ru, en, scss, icons, json, copySwiperCss, js, copySwiperJs, other, images));
+const mainTasks = gulp.series(fontsTasks, gulp.parallel(copy, html, cz, en, scss, icons, json, copySwiperCss, js, copySwiperJs, other, images));
 
 // // основные задачи для сборки проекта
-// const mainTasks = gulp.parallel(copy, html, ru, scss, json,js, images); // параллельное выполнение html и copy
+// const mainTasks = gulp.parallel(copy, html, cz, scss, json,js, images); // параллельное выполнение html и copy
 
 // построение сценариев по умоллчанию
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watchAssets, server)); // режим разработчика (т.е. сборка и наблюдение в режиме разработки)

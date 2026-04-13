@@ -1,0 +1,21 @@
+@use "utils/_mixins" as mh;
+.slogan {
+  &__container {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-weight: 800;
+    @include mh.adaptiv-value("font-size", 31, 24.8, 0);
+    @include mh.adaptiv-value("line-height", 38, 30.4, 0);
+    text-align: justify;
+    text-justify: auto;
+    text-wrap: balance;
+
+    span {
+      color: var(--color-text);
+    }
+  }
+}

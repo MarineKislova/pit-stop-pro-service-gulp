@@ -4,28 +4,119 @@
   <body>
     <div class="wrapper">
       <main class="content">
-        @@include('html/header.html', {})
         <!--  -->
         <div class="main">
           <!-- hero -->
           <div class="hero">
             <div class="hero__container">
-              <h1 class="hero__title">Trusted car repair in Warsaw</h1>
-              <div class="hero__subtitle">Space-level solutions for everyday challenges</div>
-              <button class="hero__btn btn-primary open-modal">Book an appointment</button>
+              @@include('html/header.html', {})
+              <div class="hero__main">
+                <h1 class="hero__title">Trusted car repair in Prague</h1>
+                <div class="hero__subtitle">Space-level solutions for everyday challenges</div>
+                <button class="hero__btn btn-primary open-modal">Book an appointment</button>
+              </div>
+
               <div class="hero__experience">
-                <div class="hero__experience-title">10+ Years of Experience</div>
-                <div class="hero__experience-text">Over 10 years of helping drivers in Warsaw keep their cars in perfect condition. Professional diagnostics, quality repairs, and service you can rely on.</div>
+                <div class="hero__experience-title">15+ Years of Experience</div>
+                <div class="hero__experience-text">
+                  Over 15 years of helping drivers in Warsaw keep their cars in perfect condition. Professional diagnostics, quality repairs, and service you can rely on.
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- anchor About -->
-           <div class="anchor" id="about">
+          <!-- anchor Slogan -->
+          <!-- <div class="anchor" id="slogan">
             <div class="anchor__container"></div>
-           </div>
+          </div> -->
+          <!-- end anchor -->
+
+          <div class="slogan">
+            <div class="slogan__container">
+              <div class="slogan__title"><span>While we take care of your car,</span> you can relax in our comfortable waiting area with Wi-Fi, drinks, and entertainment</div>
+            </div>
+          </div>
+
+          <!-- anchor About -->
+          <div class="anchor" id="about">
+            <div class="anchor__container"></div>
+          </div>
+          <!-- end anchor -->
+
+          <!-- section About -->
+          <section class="about">
+            <div class="about__container">
+              <div class="about__left">
+                <div class="about__left-column">
+                  <div class="about__left-title">Why Choose Pit Stop Service</div>
+                  <div class="about__left-text">At Pit Stop Service, we build our work on trust, transparency, and long-term cooperation.</div>
+                  <div class="about__left-btn btn-secondary open-modal">Book an appointment</div>
+                </div>
+                <div class="about__left-column">
+                  <p>Pit Stop Service is a service where trust, quality, and honesty matter more than volume</p>
+                </div>
+              </div>
+              <div class="about__right">
+                <div class="about__right-card">
+                  <div class="about__right-card-title">Individual approach and fair pricing</div>
+                  <div class="about__right-card-text">We take into account the specifics of your vehicle, your budget, and your preferences. We offer only justified solutions — no forced services or hidden fees. Our goal is fair pricing and real value for the client.</div>
+                </div>
+                <div class="about__right-card">
+                  <div class="about__right-card-title">We work for trust, not volume</div>
+                  <div class="about__right-card-text">For us, the priority is not the number of cars per day, but the quality of work and your peace of mind. We focus on long-term relationships and aim for every client to become a regular.</div>
+                </div>
+                <div class="about__right-card">
+                  <div class="about__right-card-title">Promotions and special offers</div>
+                  <div class="about__right-card-text">Our clients can benefit from special promotions and discount coupons, making maintenance even more accessible.</div>
+                </div>
+                <div class="about__right-card">
+                  <div class="about__right-card-title">Complete transparency of repairs</div>
+                  <div class="about__right-card-text">Upon request, we provide photo and video reports of all work stages. You always know exactly what is being done to your vehicle and what you are paying for.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- end section About -->
         </div>
-        <!--  -->
+
+        <!-- POP UP -->
+        <div class="modal" id="contact-modal">
+          <div class="modal__overlay"></div>
+
+          <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть">&times;</button>
+
+            <div class="modal__content-left">
+              <h3>Send a Request</h3>
+              <p>Leave a request and our specialist will contact you shortly to clarify details, answer your questions, and offer the best solution for your vehicle.</p>
+              <form class="form-modal">
+                <div class="form-group">
+                  <input type="text" id="text-modal" required placeholder="" />
+                  <label for="text-modal">Name</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" id="email-modal" placeholder="" />
+                  <label for="email-modal">E-mail</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="tel" id="tel-modal" required placeholder="+ " />
+                  <label for="tel-modal">Phone Number</label>
+                </div>
+
+                <!-- honeypot -->
+                <input type="text" name="honey" style="display: none" tabindex="-1" autocomplete="off" />
+
+                <button class="btn-primary send-modal" id="sendBtn" type="submit">Book an appointment</button>
+                <div id="status-message"></div>
+              </form>
+            </div>
+            <div class="modal__content-right">
+              <img src="img/gallery-5-640x427.jpg" alt="" />
+            </div>
+          </div>
+        </div>
         @@include('html/footer.html', {})
       </main>
     </div>

@@ -1,35 +1,67 @@
 @use "utils/_mixins" as mh;
 
 .hero {
-  // margin-top: -70px;
+  margin-bottom: 7px;
   &__container {
     background: url(../../img/hero-1920x1280.jpg) center no-repeat;
-    height: 670px;
+    @include mh.adaptiv-value("height", 670, 536, 0);
+    // height: 670px;
     border-radius: 32px;
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: start;
-    
+    box-shadow: 0px 3px 5px rgba(8, 8, 8, 0.81);
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    max-width: 577px;
+    @include mh.adaptiv-value("gap", 20, 16, 0);
   }
 
   &__title {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    @include mh.adaptiv-value("font-size", 48, 38.4, 0);
+    @include mh.adaptiv-value(" line-height", 59, 47.2, 0);
+    text-transform: uppercase;
   }
 
   &__subtitle {
+    @include mh.adaptiv-value("font-size", 20, 18, 0);
+    @include mh.adaptiv-value(" line-height", 31, 24.8, 0);
   }
 
   &__btn {
   }
 
   &__experience {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 4px;
+    max-width: 440px;
+    height: max-content;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    z-index: 3;
   }
 
   &__experience-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
   }
 
   &__experience-text {
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 .btn-primary {

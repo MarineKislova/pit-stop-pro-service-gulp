@@ -8,6 +8,13 @@
 // блоки
 @use "blocks/_header.scss";
 @use "blocks/_hero.scss";
+@use "blocks/_slogan.scss";
+@use "blocks/_about.scss";
+@use "blocks/_modal.scss";
+
+html {
+  scroll-behavior: smooth;
+}
 
 .wrapper {
   min-height: 100%;
@@ -15,6 +22,7 @@
   display: flex;
   flex-direction: column;
   @include mh.adaptiv-value("padding-top", 16, 8, 0);
+  background-color: #fff0f0;
   height: 10000px;
 }
 .content {
@@ -25,7 +33,14 @@
   max-width: 1440px;
   margin: 0 auto;
   background-color: #fff;
+  background-color: #fff0f0;
   @include mh.adaptiv-value("padding", 32, 16, 0);
+}
+
+.anchor {
+  &__container {
+    @include mh.adaptiv-value("height", 50, 25, 0);
+  }
 }
 
 .btn-primary {
@@ -39,8 +54,30 @@
   border-radius: 32px;
   backdrop-filter: blur(32px);
   background-color: var(--color-secondary);
+
+  &:hover {
+    box-shadow: 1px 3px 5px #827575;
+  }
 }
 
-.is-open {
+.btn-secondary {
   display: flex;
+  justify-content: center;
+  // align-items: center;
+  width: 227px;
+  color: #fff;
+  font-size: 14px;
+  padding: 16px;
+  border-radius: 32px;
+  backdrop-filter: blur(32px);
+  background-color: #fff;
+  color: #000;
+
+  &:hover {
+    box-shadow: 1px 3px 5px #827575;
+  }
+}
+
+.open {
+  display: flex !important;
 }
