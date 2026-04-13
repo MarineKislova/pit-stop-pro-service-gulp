@@ -32,15 +32,12 @@ html {
 [class*="__container"] {
   max-width: 1440px;
   margin: 0 auto;
-  background-color: #fff;
   background-color: #fff0f0;
   @include mh.adaptiv-value("padding", 32, 16, 0);
 }
 
 .anchor {
-  &__container {
-    @include mh.adaptiv-value("height", 50, 25, 0);
-  }
+  @include mh.adaptiv-value("height", 12, 12, 0);
 }
 
 .btn-primary {
@@ -72,6 +69,7 @@ html {
   backdrop-filter: blur(32px);
   background-color: #fff;
   color: #000;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 1px 3px 5px #827575;
