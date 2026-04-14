@@ -1,0 +1,81 @@
+@use "utils/_mixins" as mh;
+
+.offer {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+    width: 50%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__left-title {
+    text-align: start;
+    font-weight: 800;
+    @include mh.adaptiv-value("font-size", 24, 19.2, 0);
+    @include mh.adaptiv-value("line-height", 29, 23.2, 0);
+    text-transform: uppercase;
+
+    span{
+      color: var(--color-primary);
+    }
+  }
+
+  &__left-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    @include mh.adaptiv-value("gap", 12, 10, 0);
+  }
+
+  &__left-btn {
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0px 3px 5px rgba(28, 27, 27, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media (max-width: 375px) {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+}
+.btn-primary {
+}
+.open-modal {
+}

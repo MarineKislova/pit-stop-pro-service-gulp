@@ -1,0 +1,121 @@
+@use "utils/_mixins" as mh;
+
+.service {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-items: center;
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 800;
+    @include mh.adaptiv-value("font-size", 24, 19.2, 0);
+    @include mh.adaptiv-value("line-height", 29, 23.2, 0);
+    text-transform: uppercase;
+
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__btn {
+  }
+}
+.btn-primary {
+}
+.open-modal {
+}
+.accordion {
+  &__container {
+    padding: 0 !important;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-content: start;
+    justify-items: center;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: min-content; //!при раскрытии других не открывается body аккордеона при не активном пункте
+    width: 100%;
+    @include mh.adaptiv-value("padding", 16, 12, 0);
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    box-shadow: rgba(47, 79, 62, 0.2) 0px 8px 16px 0px;
+    transition: background-color 0.3s ease;
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__item-title {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    @include mh.adaptiv-value("font-size", 20, 16, 0);
+    @include mh.adaptiv-value("line-height", 24, 19.2, 0);
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  &__item-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+    border: 1px solid rgba(47, 79, 62, 0.1);
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 32px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__item-body {
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    @include mh.adaptiv-value("padding", 20, 10, 0);
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+    text-align: justify;
+    text-justify: auto;
+  }
+}
+.accordion-item {
+}
+.accordion-toggle {
+}
+.accordion-icon {
+}

@@ -1,0 +1,49 @@
+@use "utils/_mixins" as mh;
+
+.gallery {
+  &__container {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    @include mh.adaptiv-value("gap", 16, 4, 0);
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0px;
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+    flex: 0 1 332px;
+    height: 530px;
+
+    // Планшет: по 2 колонки в ряд
+    @media (max-width: 1200px) {
+      flex: 0 1 calc(50% - 24px);
+      height: auto; // На маленьких экранах высоту лучше отпустить
+    }
+
+    // Мобильный: 1 колонка на всю ширину
+    @media (max-width: 600px) {
+      flex: 1 1 90%;
+      height: auto;
+    }
+  }
+
+  &__item {
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    box-shadow: 0px 3px 5px #413838;
+
+    @media (max-width: 600px) {
+      border-radius: 12px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use "utils/_mixins" as mh;
+
+.getPro {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-items: center;
+    @include mh.adaptiv-value("gap", 16, 8, 0);
+    background-color: #cd050a !important;
+    border-radius: 32px;
+    color: #ffffff;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    @include mh.adaptiv-value("font-size", 24, 19.2, 0);
+    @include mh.adaptiv-value("line-height", 29, 23.2, 0);
+    text-transform: uppercase;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__btn {
+  }
+}
+.btn-secondary {
+}
+.open-modal {
+}

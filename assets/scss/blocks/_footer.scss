@@ -1,0 +1,107 @@
+@use "utils/_mixins" as mh;
+
+.footer {
+  margin-bottom: 16px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: #2e2525 !important;
+    color: #fff;
+    border-radius: 32px 32px 0 0;
+    border-radius: 32px;
+
+    gap: 24px;
+    line-height: 24px;
+  }
+
+  &__logo {
+    display: flex;
+    @include mh.adaptiv-value("font-size", 24, 19.2, 0);
+
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+  }
+}
+
+.column {
+  &:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+  }
+
+  &__nav {
+  }
+
+  &__contacts {
+    li {
+      position: relative;
+      padding-left: 20px;
+      color: #fff;
+
+      // Чтобы не дублировать код для всех :before
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      // А здесь только меняем картинки
+      &:nth-child(1):before {
+        background-image: url(../icons/Vector.svg);
+      }
+      &:nth-child(2):before {
+        background-image: url(../../icons/fi-sr-envelope.svg);
+      }
+      &:nth-child(3):before {
+        background-image: url(../../icons/fi-ss-call-outgoing.svg);
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+  }
+}
+.nav-link {
+}

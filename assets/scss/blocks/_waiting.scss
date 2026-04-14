@@ -1,0 +1,84 @@
+@use "utils/_mixins" as mh;
+
+.waiting {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     @include mh.adaptiv-value("gap", 16, 12, 0);
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @include mh.adaptiv-value("gap", 16, 12, 0);
+
+    @media (max-width:500px) {
+      flex-direction: column;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include mh.adaptiv-value("padding", 24, 12, 0);
+    gap: 8px;
+    max-width: 426.67px;
+  }
+
+  &__card-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include mh.adaptiv-value("padding", 24, 19.2, 0);
+    gap: 8px;
+  }
+
+  &__card-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__card-text {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__btn {
+  }
+}
+.btn-primary {
+}
+.open-modal {
+}

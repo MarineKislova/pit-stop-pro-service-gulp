@@ -10,9 +10,7 @@
     font-weight: 800;
     @include mh.adaptiv-value("font-size", 31, 24.8, 0);
     @include mh.adaptiv-value("line-height", 38, 30.4, 0);
-    text-align: justify;
-    text-justify: auto;
-    text-wrap: balance;
+ text-align: center;
 
     span {
       color: var(--color-text);

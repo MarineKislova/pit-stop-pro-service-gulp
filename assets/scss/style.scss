@@ -10,7 +10,14 @@
 @use "blocks/_hero.scss";
 @use "blocks/_slogan.scss";
 @use "blocks/_about.scss";
+@use "blocks/_waiting.scss";
+@use "blocks/_offer.scss";
+@use "blocks/_getPro.scss";
+@use "blocks/_gallery.scss";
+@use "blocks/_services.scss";
+@use "blocks/_reviews.scss";
 @use "blocks/_modal.scss";
+@use "blocks/_footer.scss";
 
 html {
   scroll-behavior: smooth;
@@ -23,7 +30,7 @@ html {
   flex-direction: column;
   @include mh.adaptiv-value("padding-top", 16, 8, 0);
   background-color: #fff0f0;
-  height: 10000px;
+  // height: 10000px;
 }
 .content {
   flex: 1 1 auto;
@@ -78,4 +85,45 @@ html {
 
 .open {
   display: flex !important;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 0, 0, 0.6); // Твій акцентний синій
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  // Початковий стан (прихована)
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  &._active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background-color: var(--color-primary);
+    box-shadow: 0 5px 15px rgba(195, 17, 12, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
 }
