@@ -16,6 +16,7 @@
 @use "blocks/_gallery.scss";
 @use "blocks/_services.scss";
 @use "blocks/_reviews.scss";
+@use "blocks/_contacts.scss";
 @use "blocks/_modal.scss";
 @use "blocks/_footer.scss";
 
@@ -93,7 +94,7 @@ html {
   right: 30px;
   width: 50px;
   height: 50px;
-  background-color: rgba(255, 0, 0, 0.6); // Твій акцентний синій
+  background-color: rgba(112, 58, 58, 0.8); // Твій акцентний синій
   color: #fff;
   border: none;
   border-radius: 50%;

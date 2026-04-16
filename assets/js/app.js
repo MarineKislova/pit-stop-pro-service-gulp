@@ -1,4 +1,5 @@
 import * as commonFunctions from "./modules/functions.js";
+import { swiperReviews } from "./modules/swiper.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
@@ -24,27 +25,97 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //модальное окно для связи из header
-  const openModalBtn = document.querySelectorAll(".open-modal");
-  const modal = document.getElementById("contact-modal");
-  const closeBtn = modal.querySelector(".modal__close");
-  const overlay = modal.querySelector(".modal__overlay");
+ const modal = document.getElementById("contact-modal");
+  if (!modal) return;
 
-  function openModal() {
-    modal.style.display = "flex";
+  const openModalBtns = document.querySelectorAll(".open-modal");
+  // Выбираем все элементы закрытия (крестик, оверлей и кнопку OK в блоке успеха)
+  const closeElements = modal.querySelectorAll(".modal__close, .modal__overlay, .modal__close-btn");
+  
+  const modalContent = modal.querySelector('.modal__content'); // Блок с фото и формой
+  const successBlock = document.getElementById('success-message'); // Блок успеха
+  const form = modal.querySelector('.form-modal');
+
+  // --- Функции управления ---
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
-    modal.style.display = "none";
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+    
+    // Сбрасываем модалку к исходному виду (с фото) после закрытия
+    setTimeout(resetModal, 300);
   }
 
-  openModalBtn.forEach((item) => {
-    item.addEventListener("click", openModal);
-  });
-  closeBtn.addEventListener("click", closeModal);
-  overlay.addEventListener("click", closeModal);
+  function resetModal() {
+    // 1. Показываем основной блок (с фото) и скрываем блок успеха
+    if (modalContent) modalContent.style.display = 'flex';
+    if (successBlock) successBlock.style.display = 'none';
 
+    // 2. Сбрасываем саму форму
+    if (form) {
+      form.reset();
+      const sendBtn = form.querySelector('#sendBtn');
+      if (sendBtn) {
+        sendBtn.disabled = false;
+        sendBtn.innerText = 'Book an appointment';
+      }
+    }
+  }
+
+  // --- Обработчики событий ---
+
+  openModalBtns.forEach(btn => btn.addEventListener("click", openModal));
+
+  closeElements.forEach(el => el.addEventListener("click", closeModal));
+
+  // Закрытие на ESC
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+
+  // Логика отправки формы
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Honeypot защита
+      const honey = form.querySelector('input[name="honey"]')?.value;
+      if (honey) return;
+
+      const sendBtn = form.querySelector('#sendBtn');
+      sendBtn.innerText = 'Sending...';
+      sendBtn.disabled = true;
+
+      // Имитация отправки
+      setTimeout(() => {
+        // СКРЫВАЕМ всю карточку (вместе с фото)
+        if (modalContent) modalContent.style.display = 'none';
+        
+        // ПОКАЗЫВАЕМ блок успеха (узкое окно)
+        if (successBlock) successBlock.style.display = 'flex';
+      }, 800);
+    });
+  }
+
+  // Закрытие окна по кнопке "Ok"
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal__close-btn')) {
+      const modal = document.getElementById('contact-modal');
+      modal.classList.remove('active'); // Или ваш класс для закрытия
+      
+      // Опционально: сбросить форму через время, чтобы при новом открытии она была пустой
+      setTimeout(() => {
+        location.reload(); // Простой способ сбросить состояние макета
+      }, 500);
+    }
   });
 
   // аккордеон
@@ -79,8 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Запуск
   initAccordion();
 
+  //swiper
+  swiperReviews.update();
 
-    //скролл кнопка
+  //скролл кнопка
   const scrollTopBtn = document.getElementById("scrollTop");
 
   window.addEventListener("scroll", () => {

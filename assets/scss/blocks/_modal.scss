@@ -8,6 +8,10 @@
   align-items: center;
   justify-content: center;
 
+  &.active {
+    display: flex; // Теперь при добавлении класса окно появится
+  }
+
   &__overlay {
     position: absolute;
     inset: 0;
@@ -139,4 +143,58 @@ body.modal-open {
 .btn-primary {
 }
 .send-modal {
+}
+
+.modal__success {
+  position: relative;
+  z-index: 1001;
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 450px; // Узкое и аккуратное
+  display: none; // Включается через flex в JS
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    background: #4caf50; // Цвет успеха (зеленый)
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #666;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
