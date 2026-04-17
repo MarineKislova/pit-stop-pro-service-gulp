@@ -135,8 +135,8 @@ h6 {
           justify-content: center;
   font-size: calc(18px + 4 * (100vw - 320px) / (1440 - 320));
   font-weight: 600;
-  width: calc(80px + 100 * (100vw - 320px) / (1440 - 320));
-  width: 180px;
+  width: calc(80px + 120 * (100vw - 320px) / (1440 - 320));
+  width: 200px;
   line-height: 1.2;
   color: #cec2c2;
 }
@@ -348,16 +348,14 @@ h6 {
 }
 
 .hero__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-weight: 800;
   font-size: calc(38.4px + 9.6 * (100vw - 320px) / (1440 - 320));
   line-height: calc(47.2px + 11.8 * (100vw - 320px) / (1440 - 320));
   text-transform: uppercase;
+}
+
+.hero__title span {
+  color: var(--color-primary);
 }
 
 .hero__subtitle {
@@ -433,7 +431,7 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
-  width: 50%;
+  width: 60%;
 }
 
 .about__left-column {
@@ -489,16 +487,20 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fff;
 }
 
 .about__left-text {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 17px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  color: #fff;
+  border-radius: 16px;
+  padding: 16px;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -696,7 +698,7 @@ h6 {
           align-items: center;
   text-align: justify;
   font-size: 15px;
-  line-height: 15px;
+  line-height: 18px;
 }
 
 .offer__container {
@@ -988,12 +990,6 @@ h6 {
 }
 
 .accordion__item-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-weight: 700;
   font-size: calc(16px + 4 * (100vw - 320px) / (1440 - 320));
   line-height: calc(19.2px + 4.8 * (100vw - 320px) / (1440 - 320));
@@ -1041,7 +1037,8 @@ h6 {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: calc(10px + 10 * (100vw - 320px) / (1440 - 320));
-  gap: calc(8px + 8 * (100vw - 320px) / (1440 - 320));
+  gap: calc(8px + 6 * (100vw - 320px) / (1440 - 320));
+  line-height: 20px;
   text-align: justify;
   text-justify: auto;
 }
@@ -1067,12 +1064,6 @@ h6 {
 }
 
 .reviews__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-weight: 800;
   font-size: 31px;
   line-height: 38px;
@@ -1167,7 +1158,7 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   gap: 40px;
-  color: #fff;
+  color: #d0cece;
   border-radius: 24px;
   overflow: hidden;
   -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
