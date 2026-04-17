@@ -136,6 +136,7 @@ h6 {
   font-size: calc(18px + 4 * (100vw - 320px) / (1440 - 320));
   font-weight: 600;
   width: calc(80px + 100 * (100vw - 320px) / (1440 - 320));
+  width: 180px;
   line-height: 1.2;
   color: #cec2c2;
 }
@@ -311,7 +312,7 @@ h6 {
 }
 
 .no-webp .hero__container{
-  background: url(../../img/hero-1920x1280.jpg) center no-repeat; }
+  background: url(img/hero-1920x1280.jpg) center no-repeat; }
 
 .hero__container {
   height: calc(610px + 60 * (100vw - 320px) / (1440 - 320));
@@ -451,7 +452,7 @@ h6 {
 }
 
 .no-webp .about__left-column:nth-child(1){
-  background-image: url(../../img/gallery-4-640x427.jpg); }
+  background-image: url(../img/gallery-4-640x427.jpg); }
 
 .about__left-column:nth-child(1) {
   -webkit-box-pack: justify;
@@ -1656,11 +1657,11 @@ body.modal-open {
 }
 
 .column__contacts li:nth-child(2):before {
-  background-image: url(../../icons/fi-sr-envelope.svg);
+  background-image: url(../icons/fi-sr-envelope.svg);
 }
 
 .column__contacts li:nth-child(3):before {
-  background-image: url(../../icons/fi-ss-call-outgoing.svg);
+  background-image: url(../icons/fi-ss-call-outgoing.svg);
 }
 
 .column__social {
@@ -1995,6 +1996,10 @@ html {
 }
 
 @media (max-width: 375px) {
+  .header__logo {
+    width: 80px;
+  }
+
   .offer__right {
     width: 100%;
     -webkit-box-orient: vertical;
@@ -2004,6 +2009,6 @@ html {
   }
 }
 
-.webp .hero__container{ background: url(../../img/hero-1920x1280.webp) center no-repeat; }
+.webp .hero__container{ background: url(img/hero-1920x1280.webp) center no-repeat; }
 
-.webp .about__left-column:nth-child(1){ background-image: url(../../img/gallery-4-640x427.webp); }
+.webp .about__left-column:nth-child(1){ background-image: url(../img/gallery-4-640x427.webp); }
