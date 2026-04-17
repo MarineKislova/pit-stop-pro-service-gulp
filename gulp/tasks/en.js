@@ -33,7 +33,7 @@ export const en = () => {
           verbose: true
         }))
         */
-      .pipe(app.plugins.replace(/\/?assets\/img\//g, "img/"))
+      .pipe(app.plugins.replace(/\/?assets\/img\//g, "/img/"))
       .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
       .pipe(
         app.plugins.if(
