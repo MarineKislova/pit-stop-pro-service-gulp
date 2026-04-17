@@ -78,8 +78,7 @@
   }
 
   &__item-title {
-    display: flex;
-    align-items: center;
+
     font-weight: 700;
     @include mh.adaptiv-value("font-size", 20, 16, 0);
     @include mh.adaptiv-value("line-height", 24, 19.2, 0);
@@ -111,7 +110,8 @@
     justify-content: center;
     align-items: flex-start;
     @include mh.adaptiv-value("padding", 20, 10, 0);
-    @include mh.adaptiv-value("gap", 16, 8, 0);
+    @include mh.adaptiv-value("gap", 14, 8, 0);
+    line-height: 20px;
     text-align: justify;
     text-justify: auto;
   }

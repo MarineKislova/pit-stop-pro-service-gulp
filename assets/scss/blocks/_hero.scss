@@ -23,12 +23,13 @@
   }
 
   &__title {
-    display: flex;
-    align-items: center;
     font-weight: 800;
     @include mh.adaptiv-value("font-size", 48, 38.4, 0);
     @include mh.adaptiv-value(" line-height", 59, 47.2, 0);
     text-transform: uppercase;
+    span {
+      color: var(--color-primary);
+    }
   }
 
   &__subtitle {
