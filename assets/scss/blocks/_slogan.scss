@@ -4,13 +4,14 @@
     display: flex;
     align-items: center;
     text-transform: uppercase;
+    border-radius: 32px 32px 0 0;
   }
 
   &__title {
     font-weight: 800;
     @include mh.adaptiv-value("font-size", 31, 24.8, 0);
     @include mh.adaptiv-value("line-height", 38, 30.4, 0);
- text-align: center;
+    text-align: center;
 
     span {
       color: var(--color-text);

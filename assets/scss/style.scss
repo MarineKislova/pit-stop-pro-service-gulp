@@ -30,12 +30,13 @@ html {
   display: flex;
   flex-direction: column;
   @include mh.adaptiv-value("padding-top", 16, 8, 0);
-  background-color: #fff0f0;
+  background-color: #907979;
   // height: 10000px;
 }
 .content {
   flex: 1 1 auto;
 }
+
 
 [class*="__container"] {
   max-width: 1440px;
@@ -46,6 +47,14 @@ html {
 
 .anchor {
   @include mh.adaptiv-value("height", 12, 12, 0);
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #fff0f0;
+}
+
+
+#footer{
+  border-radius: 0 0 100px 100px;
 }
 
 .btn-primary {

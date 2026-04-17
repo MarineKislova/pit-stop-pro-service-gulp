@@ -1,6 +1,7 @@
 @use "utils/_mixins" as mh;
 
 .getPro {
+  padding: 8px;
   &__container {
     display: flex;
     flex-direction: column;
@@ -9,6 +10,7 @@
     align-items: center;
     @include mh.adaptiv-value("gap", 16, 8, 0);
     background-color: #cd050a !important;
+
     border-radius: 32px;
     color: #ffffff;
   }

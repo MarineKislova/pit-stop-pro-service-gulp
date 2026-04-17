@@ -32,7 +32,7 @@
     @include mh.adaptiv-value("line-height", 29, 23.2, 0);
     text-transform: uppercase;
 
-    span{
+    span {
       color: var(--color-primary);
     }
   }
@@ -43,12 +43,18 @@
     align-items: center;
     text-align: justify;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 17px;
     @include mh.adaptiv-value("gap", 12, 10, 0);
   }
 
   &__left-btn {
+    display: flex;
+
+    @media (max-width: 768px) {
+      align-self: center;
+    }
+    
   }
 
   &__right {

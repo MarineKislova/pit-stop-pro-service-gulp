@@ -44,8 +44,8 @@
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    @include mh.adaptiv-value("padding", 20, 10, 0);
+    @include mh.adaptiv-value("gap", 20, 10, 0);
     justify-content: center;
     align-content: start;
     justify-items: center;
@@ -56,8 +56,8 @@
     flex-direction: column;
     height: min-content; //!при раскрытии других не открывается body аккордеона при не активном пункте
     width: 100%;
-    @include mh.adaptiv-value("padding", 16, 12, 0);
-    @include mh.adaptiv-value("gap", 16, 8, 0);
+    @include mh.adaptiv-value("padding", 16, 8, 0);
+    @include mh.adaptiv-value("gap", 16, 12, 0);
     background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 24px;
@@ -74,6 +74,7 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    // gap: 8px;
   }
 
   &__item-title {
@@ -84,6 +85,7 @@
     @include mh.adaptiv-value("line-height", 24, 19.2, 0);
     text-transform: uppercase;
     color: #000000;
+
   }
 
   &__item-icon {
@@ -95,6 +97,7 @@
     border: 1px solid rgba(47, 79, 62, 0.1);
     font-weight: 600;
     font-size: 16px;
+    flex: 0 0 auto;
     color: #fff;
     border-radius: 32px;
     width: 40px;
