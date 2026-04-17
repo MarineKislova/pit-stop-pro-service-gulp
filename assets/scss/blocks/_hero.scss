@@ -3,7 +3,7 @@
 .hero {
   @include mh.adaptiv-value("margin-bottom", 16, 8, 0);
   &__container {
-    background: url(../../img/hero-1920x1280.jpg) center no-repeat;
+    background: url(../img/hero-1920x1280.jpg) center no-repeat;
     @include mh.adaptiv-value("height", 670, 610, 0);
     // height: 670px;
     border-radius: 32px;
